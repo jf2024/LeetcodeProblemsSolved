@@ -11,10 +11,34 @@ def minStartValue(nums: list[int]) -> int:
     - Time: O(n) where n is the length of nums.
     - Space: O(1) if we track the running sum in a variable.
     """
-    # ---------------------------------------------------------
-    # TODO: YOUR LOGIC HERE
-    # ---------------------------------------------------------
-    pass
+
+    min_val = 0
+    total = 0
+
+    for num in nums:
+        total += num
+        min_val = min(min_val, total)
+
+    return -min_val + 1 
+
+
+    """
+    The below was my original solution, but in O(N) space complexity 
+
+        # prefix = [nums[0]]
+        # for i in range(1, len(nums)):
+        #     prefix.append(nums[i] + prefix[-1])
+            
+        # curr = min(prefix)
+        # answer = 0
+        # if curr > 0:
+        #     answer = 1
+        # else:
+        #     answer = abs(curr) + 1
+        
+        # return answer
+    """
+
 
 if __name__ == "__main__":
     # Test 1
