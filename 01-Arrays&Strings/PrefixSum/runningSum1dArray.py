@@ -11,12 +11,13 @@ def runningSum(nums: list[int]) -> list[int]:
     - Space: O(1) if we modify the input array, or O(n) if we create a new one.
     
     """
-    # ---------------------------------------------------------
-    # TODO: YOUR LOGIC HERE
-    # ---------------------------------------------------------
-    pass
+    prefix = [nums[0]]
+    for i in range(1, len(nums)):
+        prefix.append(nums[i] + prefix[-1]) #can also do prefix[i-1]
 
-# --- Test Cases ---
+    return prefix
+
+
 if __name__ == "__main__":
     # Test 1
     n1 = [1, 2, 3, 4]
