@@ -8,12 +8,31 @@ def getAverages(nums: list[int], k: int) -> list[int]:
     
     Complexity Analysis (Target):
     - Time: O(n) where n is the length of nums.
-    - Space: O(n) to store the prefix sum array and the output array.
     """
-    # ---------------------------------------------------------
-    # TODO: YOUR LOGIC HERE
-    #
-    pass
+    ans = []
+    nums_length = len(nums)
+    denominator = k + k + 1
+
+    if k > nums_length:
+        return [-1]
+    
+    prefix = [nums[0]]
+    for i in range(1, nums_length):
+        prefix.append(nums[i] + prefix[-1])
+
+    for _ in range(k):
+        ans.append(-1)
+
+    for l in range(k, nums_length):
+        if l + k >= nums_length:
+            ans.append(-1)
+        elif l == k:
+            ans.append(prefix[l+k] // denominator)
+        else:
+            ans.append((prefix[l+k] - prefix[l-k]) // denominator)
+    
+    return ans
+
 
 if __name__ == "__main__":
     # Test 1: Standard case
