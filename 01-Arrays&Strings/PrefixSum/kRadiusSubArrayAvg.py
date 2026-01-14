@@ -13,8 +13,8 @@ def getAverages(nums: list[int], k: int) -> list[int]:
     nums_length = len(nums)
     denominator = k + k + 1
 
-    if k > nums_length:
-        return [-1]
+    if k >= nums_length:
+        return [-1] * nums_length
     
     prefix = [nums[0]]
     for i in range(1, nums_length):
@@ -26,10 +26,12 @@ def getAverages(nums: list[int], k: int) -> list[int]:
     for l in range(k, nums_length):
         if l + k >= nums_length:
             ans.append(-1)
-        elif l == k:
-            ans.append(prefix[l+k] // denominator)
+        # elif l == k:
+        #     ans.append(prefix[l+k] // denominator)
         else:
-            ans.append((prefix[l+k] - prefix[l-k]) // denominator)
+            window_sum = prefix[l + k] - prefix[l - k] + nums[l - k]
+            ans.append(window_sum // denominator)
+            #ans.append((prefix[l+k] - prefix[l-k]) // denominator)
     
     return ans
 
