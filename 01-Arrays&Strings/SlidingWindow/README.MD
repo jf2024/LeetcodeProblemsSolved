@@ -23,7 +23,8 @@ Used when the problem specifies a window length  (e.g., "Find the largest sum of
 **The Logic:**
 
 1. Use an initial `for` loop to build the very first window (from index `0` to `k-1`).
-    - `for i in range(k) #first for loop`  
+    - `for i in range(k) #first for loop` 
+    - can also do a `sum(nums[:k])` instead of a for loop, either way works (add the first k numbers or up to element k but not including) 
 2. Use a second `for` loop to iterate through the rest of the array.
     - `for i in range(k, len(nums))`
 3. **Slide the window:** Add the new "right" element and subtract the "left" element that is falling out of the window.
