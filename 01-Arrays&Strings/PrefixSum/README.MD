@@ -62,5 +62,6 @@ In "Split" problems (like [waysToSplitArray.py](https://www.google.com/search?q=
 * [runningSum1dArray.py](./runningSum1dArray.py) - https://leetcode.com/problems/running-sum-of-1d-array/
 * [minValuePostiveStepSum.py](./minValuePostiveStepSum.py) - https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/
 * [kRadiusSubArrayAvg.py](./kRadiusSubArrayAvg.py) - https://leetcode.com/problems/k-radius-subarray-averages/description/
+    - review this problem here, gave me lots of trouble 
 
 ---
