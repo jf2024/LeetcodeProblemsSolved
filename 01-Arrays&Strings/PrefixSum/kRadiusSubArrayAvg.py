@@ -84,7 +84,9 @@ def getAveragesSlidingWindow(nums: list[int], k: int) -> list[int]:
     averages[k] = curr_window_sum // window_size
 
     for i in range(window_size, n):
-        curr_window_sum += nums[i] - nums[i - window_size] #then we update our window 
+        #curr_window_sum += nums[i] - nums[i - window_size] #then we update our window, original way 
+        curr_window_sum += nums[i] #adding element from the right
+        curr_window_sum -= nums[i - window_size] #subtracting element from the left 
         averages[i - k] = curr_window_sum // window_size
 
     return averages
