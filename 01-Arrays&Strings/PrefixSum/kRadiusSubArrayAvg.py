@@ -35,6 +35,59 @@ def getAverages(nums: list[int], k: int) -> list[int]:
     
     return ans
 
+def getAveragesPrefixSum(nums: list[int], k: int) -> list[int]:
+    """
+    Builds and returns an array of k-radius averages.
+    The window for index i is [i - k, i + k].
+    
+    Complexity Analysis (Target):
+    - Time: O(n) where n is the length of nums.
+    """
+    n = len(nums)
+    averages = [-1] * n #creating our block
+    window_size = k + k + 1 #max window size
+
+    if window_size > n: #if the window size is bigger then n, have to return all -1 as its impossible to build a subarray
+        return averages
+    
+    if k == 0: #if k is 0, just return the original list
+        return nums
+    
+    # Start our prefix sum approach here
+    prefix = [nums[0]]
+    for i in range(1, n):
+        prefix.append(nums[i] + prefix[-1])
+
+    #start from k and only go up to n-k
+        #ensures at least k elements on their left and right
+    for i in range(k, n-k):
+        subArraySum = prefix[i + k] - prefix[i - k] + nums[i - k]
+        average = subArraySum // window_size
+        averages[i] = average
+    
+    return averages
+
+def getAveragesSlidingWindow(nums: list[int], k: int) -> list[int]:
+    n = len(nums)
+    averages = [-1] * n #creating our block
+    window_size = k + k + 1 #max window size
+
+    if window_size > n: #if the window size is bigger then n, have to return all -1 as its impossible to build a subarray
+        return averages
+    
+    if k == 0: #if k is 0, just return the original list
+        return nums
+    
+    #Sliding Window approach here
+
+    curr_window_sum = sum(nums[:window_size]) #doing our first window here 
+    averages[k] = curr_window_sum // window_size
+
+    for i in range(window_size, n):
+        curr_window_sum += nums[i] - nums[i - window_size] #then we update our window 
+        averages[i - k] = curr_window_sum // window_size
+
+    return averages
 
 if __name__ == "__main__":
     # Test 1: Standard case
