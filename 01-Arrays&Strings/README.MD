@@ -74,12 +74,21 @@ def build_string(s):
 
 ### Two Pointers
 
-
+* [557. Reverse Words in a String III](./reverseWords.py) - https://leetcode.com/problems/reverse-words-in-a-string-iii/
+* [917. Reverse Only Letters](./reverseOnlyLetters.py) - https://leetcode.com/problems/reverse-only-letters/
+* [2540. Minimum Common Value](./minCommonValue.py) - https://leetcode.com/problems/minimum-common-value/
+* [283. Move Zeroes](./moveZeroes.py) - https://leetcode.com/problems/move-zeroes/
+* [2000. Reverse Prefix of Word](./reversePrefix.py) - https://leetcode.com/problems/reverse-prefix-of-word/
 
 ### Sliding Window
 
+* [209. Minimum Size Subarray Sum](./minSizeSubarraySum.py) - https://leetcode.com/problems/minimum-size-subarray-sum/
+* [1456. Maximum Number of Vowels in a Substring of Given Length](./maxVowels.py) - https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+* [1208. Get Equal Substrings Within Budget](./equalSubstrings.py) - https://leetcode.com/problems/get-equal-substrings-within-budget/
 
 ### Prefix Sum
 
+* [1732. Find the Highest Altitude](./highestAltitude.py) - https://leetcode.com/problems/find-the-highest-altitude/
+* [724. Find Pivot Index](./pivotIndex.py) - https://leetcode.com/problems/find-pivot-index/
+* [303. Range Sum Query - Immutable](./rangeSumImmutable.py) - https://leetcode.com/problems/range-sum-query-immutable/
 
----
