@@ -63,5 +63,6 @@ In "Split" problems (like [waysToSplitArray.py](https://www.google.com/search?q=
 * [minValuePostiveStepSum.py](./minValuePostiveStepSum.py) - https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/
 * [kRadiusSubArrayAvg.py](./kRadiusSubArrayAvg.py) - https://leetcode.com/problems/k-radius-subarray-averages/description/
     - review this problem here, gave me lots of trouble 
+    - Why start at the window_size for the sliding window approach? We treat the loop variable as the right edge of the window. Since we already built the first window (indices 0 to window_size - 1), the first index that needs to "slide in" is the window_size. For the example, we processing indices 0 to 6 already so in our for loop we would start at 7 since thats the window size and index 7 is the next element that we havent processed yet 
 
 ---
