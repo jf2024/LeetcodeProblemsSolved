@@ -31,7 +31,16 @@ def getAverages(nums: List[int], k: int) -> List[int]:
     averages[k] = curr // window_size
 
     for j in range(k+1, len(nums) - k): #when entering, curr is 37
+
+        # j is our NEW center
+        # j + k is the NEW element on the far right
+
         curr += nums[j + k] #right element we are adding
+
+
+        # j - k is our NEW left edge, the start of our current window. 
+        # So we must remove the person at (NEW left edge - 1)
+            #without the -1, we would remove an element that is part of the window but we need the one before
         curr -= nums[j - k - 1] #left element are deleting/subtracting
         averages[j] = curr // window_size
 
