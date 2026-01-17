@@ -1,6 +1,19 @@
 def reverseWords(s: str) -> str:
-    # TODO: Implement logic
-    pass
+    ans = []
+
+    b = s.split()
+
+    for word in b:
+        for char in range(len(word) - 1, -1, -1):
+            ans.append(word[char])
+        ans.append(" ")
+
+    ans = ans[:len(ans)-1]
+    
+    return "".join(ans)
+
+
+
 
 if __name__ == "__main__":
     # Test 1
