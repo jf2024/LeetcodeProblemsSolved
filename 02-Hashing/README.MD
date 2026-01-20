@@ -24,15 +24,15 @@
 
 ## Checking For Existence
 
-* [Isolated Numbers](./EX_findIsolatedNumbers.py)
-* [First Repeated Character](./EX_repeatedCharacter.py)
-* [Two Sum](./EX_twoSum.py)
+* [Isolated Numbers](./CheckingForExistence/EX_findIsolatedNumbers.py)
+* [First Repeated Character](./CheckingForExistence/EX_repeatedCharacter.py)
+* [Two Sum](./CheckingForExistence/EX_twoSum.py)
 
 ### Practice Problems (TODO LATER)
 
-* [1832. Check if the Sentence Is Pangram](./checkIfPangram.py) 
-* [1426. Counting Elements](./countElements.py) 
-* [268. Missing Number](./missingNumber.py) 
+* [1832. Check if the Sentence Is Pangram](./CheckingForExistence/checkIfPangram.py) 
+* [1426. Counting Elements](./CheckingForExistence/countElements.py) 
+* [268. Missing Number](./CheckingForExistence/missingNumber.py) 
 
 ---
 
