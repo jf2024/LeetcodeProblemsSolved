@@ -33,7 +33,7 @@
 * [First Repeated Character](./CheckingForExistence/EX_repeatedCharacter.py)
 * [Two Sum](./CheckingForExistence/EX_twoSum.py)
 
-### Practice Problems (TODO LATER)
+### Practice Problems
 
 * [1832. Check if the Sentence Is Pangram](./CheckingForExistence/checkIfPangram.py) 
 * [1426. Counting Elements](./CheckingForExistence/countElements.py) 
@@ -44,6 +44,3 @@
 ## Counting
 
 *(in progress...)*
-
-# add these to the notes somewhere (ask gemini)
-Anytime you find your algorithm running if ... in ..., then consider using a hash map or set to store elements to have these operations run in O(1)O(1).
