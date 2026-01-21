@@ -22,6 +22,11 @@
 
 ---
 
+## Key Optimizations
+> **The "If-In" Rule:** Anytime you find your algorithm running `if ... in ...` on a list, consider using a **Hash Set** or **Hash Map** to store elements. This converts an $O(N)$ search into an $O(1)$ lookup, which can reduce total complexity from $O(N^2)$ to $O(N)$.
+
+---
+
 ## Checking For Existence
 
 * [Isolated Numbers](./CheckingForExistence/EX_findIsolatedNumbers.py)
@@ -40,3 +45,5 @@
 
 *(in progress...)*
 
+# add these to the notes somewhere (ask gemini)
+Anytime you find your algorithm running if ... in ..., then consider using a hash map or set to store elements to have these operations run in O(1)O(1).
