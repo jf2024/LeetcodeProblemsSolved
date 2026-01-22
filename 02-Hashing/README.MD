@@ -29,11 +29,13 @@
 
 ## Checking For Existence
 
+### Example Problems Below
+
 * [Isolated Numbers](./CheckingForExistence/EX_findIsolatedNumbers.py)
 * [First Repeated Character](./CheckingForExistence/EX_repeatedCharacter.py)
 * [Two Sum](./CheckingForExistence/EX_twoSum.py)
 
-### Practice Problems
+### Practice Problems for Testing
 
 * [1832. Check if the Sentence Is Pangram](./CheckingForExistence/checkIfPangram.py) 
 * [1426. Counting Elements](./CheckingForExistence/countElements.py) 
@@ -43,4 +45,18 @@
 
 ## Counting
 
-*(in progress...)*
+If you need to track the frequency of elements (how many times each number or character appears), a **Hash Map** is the most efficient tool.
+
+* **Logic**: The **Key** is the element itself, and the **Value** is its current count.
+* **The `defaultdict` (from `collections`)**: Automates key initialization. When you access a missing key, it creates it with a default value (like `0` for `int`), preventing `KeyErrors`.
+* **Important Note**: When using `len(counts)` to track distinct elements, you must use `del counts[key]` when a count reaches `0`. Even if a value is `0`, the key still exists in the map and will be counted.
+
+### Example Problems
+
+* [Longest Substring with K Distinct Characters](./Counting/EX_findLongestSubstring.py) — *Uses `defaultdict` and sliding window.*
+* [2248. Intersection of Multiple Arrays](./Counting/intersectionArrays.py) — *Uses counts to find elements present in all N arrays.*
+* [1941. Equal Number of Occurrences](./Counting/occurencesEqual.py) — *Uses `counts.values()` and `set()` to verify frequencies.*
+
+### Practice Problems for Testing
+
+* add later *
