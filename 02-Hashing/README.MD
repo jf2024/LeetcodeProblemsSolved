@@ -43,6 +43,10 @@
 
 ---
 
+Here is the updated **Counting** section for your README, including the two newest problems and a specific sub-section for the **Prefix Sum + Hashing** pattern you just mastered.
+
+---
+
 ## Counting
 
 If you need to track the frequency of elements (how many times each number or character appears), a **Hash Map** is the most efficient tool.
@@ -51,11 +55,20 @@ If you need to track the frequency of elements (how many times each number or ch
 * **The `defaultdict` (from `collections`)**: Automates key initialization. When you access a missing key, it creates it with a default value (like `0` for `int`), preventing `KeyErrors`.
 * **Important Note**: When using `len(counts)` to track distinct elements, you must use `del counts[key]` when a count reaches `0`. Even if a value is `0`, the key still exists in the map and will be counted.
 
+### Subarrays with Exact Constraints (Prefix Sum + Hashing)
+
+When a problem asks for a subarray with an **exact** sum or count (and the array contains negative numbers or zeros), sliding window fails. Instead, use a hash map to store the frequency of prefix sums.
+
+* **The Formula**: `ans += counts[curr - k]`.
+* **Base Case**: Always initialize `counts[0] = 1` to account for subarrays that start at index 0.
+
 ### Example Problems
 
 * [Longest Substring with K Distinct Characters](./Counting/EX_findLongestSubstring.py) — *Uses `defaultdict` and sliding window.*
 * [2248. Intersection of Multiple Arrays](./Counting/intersectionArrays.py) — *Uses counts to find elements present in all N arrays.*
 * [1941. Equal Number of Occurrences](./Counting/occurencesEqual.py) — *Uses `counts.values()` and `set()` to verify frequencies.*
+* [560. Subarray Sum Equals K](./Counting/subarraySumK.py) — *The standard Prefix Sum + Hashing implementation.*
+* [1248. Count Number of Nice Subarrays](./Counting/niceSubarrays.py) — *Transforms odds/evens into 1s/0s to use the same logic.*
 
 ### Practice Problems for Testing
 
