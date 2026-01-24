@@ -24,8 +24,9 @@ def subarraySum(nums: list[int], k: int) -> int:
 """
 1) so our curr is basically our prefix sum 
 2) we subtract our current prefix sum with k and see if that value is in the dictionary
-if it is, we would add to it 
-if its not, it would just be 0 
+3) if it is in the dictionary, we would add counts[curr - k] to our answer because it represents
+the number of times we have seen that specific prefix sum (the curr - k) in the past and stored in the dictionary
+4) if its not, it would just be 0 and wont add anything to our current answer
 
 
 and then we would add the current prefix sum to our dictionary and move on  
