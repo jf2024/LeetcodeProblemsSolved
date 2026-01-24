@@ -59,7 +59,7 @@ If you need to track the frequency of elements (how many times each number or ch
 
 When a problem asks for a subarray with an **exact** sum or count (and the array contains negative numbers or zeros), sliding window fails. Instead, use a hash map to store the frequency of prefix sums.
 
-* **The Formula**: `ans += counts[curr - k]`.
+* **The Formula**: `ans += counts[curr - k]`. This checks how many times a prefix sum has occurred in the past that would create a "gap" equal to k when subtracted from our current total.
 * **Base Case**: Always initialize `counts[0] = 1` to account for subarrays that start at index 0.
 
 ### Example Problems
@@ -72,4 +72,10 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 
 ### Practice Problems for Testing
 
-* add later *
+* [2225. Find Players with Zero or One Losses](./Counting/findWinners.py) - https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
+    - a good problem to review
+* [1133. Largest Unique Number](./Counting/largestUniqueNumber.py) - https://leetcode.com/problems/largest-unique-number/description/
+
+NEED TO DO THE BELOW PROBLEMS STILL
+* [1189. Max number of balloons](./Counting/maxNumberBalloons.py) - https://leetcode.com/problems/maximum-number-of-balloons/description/
+* [525.Contiguous Array](./Counting/contiguousArray.py) - https://leetcode.com/problems/contiguous-array/description/
