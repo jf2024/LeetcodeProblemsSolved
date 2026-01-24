@@ -48,3 +48,7 @@ Using Hash Maps and Sets for efficient data retrieval.
 3. **Practice:** Solve the linked problems in the testing checklist.
 
 ---
+
+## links is about dynamic programming
+1) https://www.freecodecamp.org/news/learn-dynamic-programming-through-dynamic-visuals/
+2) www.reddit.com/r/leetcode/comments/1bivxkm/how_to_become_a_beast_at_dynamic_programming/
