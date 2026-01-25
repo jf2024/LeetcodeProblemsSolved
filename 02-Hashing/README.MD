@@ -75,7 +75,7 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [2225. Find Players with Zero or One Losses](./Counting/findWinners.py) - https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
     - a good problem to review
 * [1133. Largest Unique Number](./Counting/largestUniqueNumber.py) - https://leetcode.com/problems/largest-unique-number/description/
-
-NEED TO DO THE BELOW PROBLEMS STILL
 * [1189. Max number of balloons](./Counting/maxNumberBalloons.py) - https://leetcode.com/problems/maximum-number-of-balloons/description/
+    - a good problem to review
 * [525.Contiguous Array](./Counting/contiguousArray.py) - https://leetcode.com/problems/contiguous-array/description/
+    - a good problem to review 
