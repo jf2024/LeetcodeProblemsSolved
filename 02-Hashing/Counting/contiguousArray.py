@@ -26,10 +26,15 @@ def findMaxLength(self, nums: list[int]) -> int:
     CONCEPTUAL NOTES:
     1) THE TRANSFORMATION: We treat '1' as +1 and '0' as -1. This turns 
        the problem into finding a subarray with a sum of 0.
+        - key detail is "equal" number of things which the problem asks, which means the 
+        difference is zero and if we treat 0 as a -1, then our "equal balance" problem turns into
+        a search for a sum of 0
        
     2) EQUAL BALANCE: If the running sum (prefix sum) is the same at 
        two different indices, the net change between those points was 0.
        This means the number of +1s and -1s was exactly equal.
+        - its a prefix sum because it mentions contiguous subarray and looking for an 
+        exact target
        
     3) WHY START AT -1? We initialize {0: -1} because a sum of 0 
        exists "before" the array starts. This allows us to find 
