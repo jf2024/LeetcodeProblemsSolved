@@ -43,10 +43,6 @@
 
 ---
 
-Here is the updated **Counting** section for your README, including the two newest problems and a specific sub-section for the **Prefix Sum + Hashing** pattern you just mastered.
-
----
-
 ## Counting
 
 If you need to track the frequency of elements (how many times each number or character appears), a **Hash Map** is the most efficient tool.
@@ -79,3 +75,47 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
     - a good problem to review
 * [525.Contiguous Array](./Counting/contiguousArray.py) - https://leetcode.com/problems/contiguous-array/description/
     - a good problem to review 
+
+## Other Hashing Patterns & Variations (all good problems to review)
+
+### 1. The "Grouping by Fingerprint" Pattern
+
+*Used when items that look different belong together because they share a hidden trait.*
+
+* **[49. Group Anagrams](./Other/EX_groupAnagrams.py)**
+    * **The Key**: Since anagrams have the same characters, we "normalize" them by sorting: `tuple(sorted(word))`.
+    * **The Logic**: Use `defaultdict(list)` to store the original words under their sorted "fingerprint."
+
+
+* **[2342. Max Sum of a Pair With Equal Sum of Digits](./Other/EX_maxSum.py)**
+    * **The Key**: The sum of digits (e.g.,  and ).
+    * **Math Trick**: Use `num % 10` to get the last digit and `num //= 10` to strip it.
+    * **The "One-Pass" Optimization**: Instead of storing all numbers in a list, only store the **single largest** number seen for that digit sum. When a new number arrives, pair it with the stored "champion" to update your global maximum.
+
+
+### 2. Tracking Indices: "First Seen" vs. "Last Seen"
+
+*Used to find the size of subarrays based on occurrences.*
+
+* **[2260. Minimum Consecutive Cards to Pick Up](./Other/EX_minimumCardPickup.py) (Shortest Distance)**
+    * **Strategy**: Use **Last Seen**.
+    * **Shortest Distance**: We want the "start line" to be the **most recent** time we saw the element so the gap is as small as possible. (Update the index every time).
+    * **Longest Distance**: We want the "start line" to be the **very first** time the element appeared so the gap is as wide as possible. (Never update the index). Look at the contiguousArray example from the counting section where we set 0 as -1 (we never update that)
+
+    * **Logic**: Always update the dictionary with the current index: `dic[card] = i`.
+    * **Formula**: `Current_Index - Last_Index + 1` (The `+1` counts the total elements).
+
+### 3. 2D Cross-Referencing
+
+*Used when comparing rows to columns or other grid patterns.*
+
+* **[2352. Equal Row and Column Pairs](./Other/EX_equalPairs.py)**
+    * **The "Vertical" Trick**: Extract columns using a nested loop (fixed `col`, varying `row`) or a list comprehension: `tuple(grid[r][c] for r in range(n))`.
+    * **The Multiplication Rule**: If a pattern appears X times as a row and Y times as a column, there are X * Y total pairs.
+    * **Optimized Logic**: Hash all rows first, then iterate through columns and check against the row map. `ans += row_counts[current_col]`.
+
+# List of Testing Hashing Problems
+
+
+
+
