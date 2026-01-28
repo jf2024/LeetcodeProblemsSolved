@@ -114,7 +114,14 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
     * **The Multiplication Rule**: If a pattern appears X times as a row and Y times as a column, there are X * Y total pairs.
     * **Optimized Logic**: Hash all rows first, then iterate through columns and check against the row map. `ans += row_counts[current_col]`.
 
-# List of Testing Hashing Problems
+### Other Testing Problems
+
+* [Ransom Note](./Other/ransomNote.py) 
+* [Jewels and Stones](./Other/numJewelsInStones.py) - reviewing sets 
+* [Longest Substring without Repeating Characters](./Other/lengthOfLongestSubstring.py) - good for sliding window + hashing (similar to findlongestsubstring example from the Counting Section)
+
+
+## List of More Testing Hashing Problems
 
 
 
