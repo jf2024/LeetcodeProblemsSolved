@@ -123,6 +123,11 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 
 ## List of More Testing Hashing Problems
 
+* [Contains Duplicates](./containsDuplicate.py) 
+* [Destination City](./destinationCity.py)
+
+
+
 
 
 
