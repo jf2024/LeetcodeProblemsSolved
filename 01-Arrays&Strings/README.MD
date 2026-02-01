@@ -83,7 +83,9 @@ def build_string(s):
 ### Sliding Window
 
 * [209. Minimum Size Subarray Sum](./minSizeSubarraySum.py) - https://leetcode.com/problems/minimum-size-subarray-sum/
+    - good problem to review
 * [1456. Maximum Number of Vowels in a Substring of Given Length](./maxVowels.py) - https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+    - good problem to review
 * [1208. Get Equal Substrings Within Budget](./equalSubstrings.py) - https://leetcode.com/problems/get-equal-substrings-within-budget/
 
 ### Prefix Sum
