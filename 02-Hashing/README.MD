@@ -129,6 +129,8 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [Count Elements Max Frequency](./countElementsMaxFrequency.py)
 * [Find Lucky](./findLucky.py)
 * [Unique Number of Occurrences](./uniqueOccurrences.py)
+* [Sort Characters By Frequency](./frequencySort.py) - https://leetcode.com/problems/sort-characters-by-frequency/description/
+    - good problem to review
 
 
 
