@@ -107,14 +107,71 @@ def get_sum(head):
 
 # Algorthims/Techniques
 
-## 1) Fast Pointer
+## 1) Fast and Slow Pointers (Two-Pointer Technique)
 
-write here later
+The Two-Pointer technique in Linked Lists is an adaptation of the same strategy used for strings and arrays. The core idea is that the pointers do not move side-by-side; they move at different **speeds** or maintain a specific **distance**.
 
-## 2) Slow Pointer
-write here later
+### A. Different Speeds 
 
+The "fast" pointer moves through the list quicker than the "slow" pointer. This is primarily used for finding the middle of a list or detecting cycles.
 
+* **Fast Pointer:** Moves **two** nodes per iteration (`fast = fast.next.next`).
+* **Slow Pointer:** Moves **one** node per iteration (`slow = slow.next`).
 
+> **⚠️ Vital Condition:** When moving two steps at a time, you **must** check both `fast` and `fast.next` in your loop to avoid a `NoneType` error.
+
+**Pseudocode:**
+
+```python
+def fast_slow_speed(head):
+    slow = head
+    fast = head
+
+    # Check both to ensure fast.next.next is valid
+    while fast and fast.next:
+        # Process logic here
+        slow = slow.next
+        fast = fast.next.next
+    
+    return slow # In many cases, slow is now at the middle
+
+```
+
+### B. Different Starting Positions (The "Gap" Strategy)
+
+Instead of different speeds, both pointers move at **one node per iteration**, but the "fast" pointer is given a head start.
+
+* Used for: Finding the -th node from the end.
+* **Mechanic:** Move `fast`  steps ahead first, then start moving `slow`. When `fast` reaches the end (`None`), `slow` will be exactly  nodes from the end.
+
+**Pseudocode:**
+
+```python
+def fast_slow_gap(head, k):
+    slow = head
+    fast = head
+
+    # 1. Create the gap
+    for _ in range(k):
+        fast = fast.next
+    
+    # 2. Move together at the same speed
+    # Only need to check 'fast' because we move 1 step at a time
+    while fast:
+        slow = slow.next
+        fast = fast.next
+        
+    return slow
+
+```
+
+#### Example Problems:
+
+* [Find Middle](./Fast&SlowPointers/EX_findMiddle.py) 
+* [Has Cycle](./Fast&SlowPointers/EX_hasCycle.py)
+* [Find Kth Node](./Fast&SlowPointers/EX_findKthNode.py)
+    - good example of the gap strategy
+
+#### Testing Problems: 
 
 ---
