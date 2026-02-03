@@ -131,6 +131,8 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [Unique Number of Occurrences](./uniqueOccurrences.py)
 * [Sort Characters By Frequency](./frequencySort.py) - https://leetcode.com/problems/sort-characters-by-frequency/description/
     - good problem to review
+* [Length of Longest Subarray With at Most K Frequency] - https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
+    - good problem to review (i was able to do it pretty easily but still good to look back on)
 
 
 
