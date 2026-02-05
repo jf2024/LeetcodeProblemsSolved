@@ -131,9 +131,13 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [Unique Number of Occurrences](./uniqueOccurrences.py)
 * [Sort Characters By Frequency](./frequencySort.py) - https://leetcode.com/problems/sort-characters-by-frequency/description/
     - good problem to review
-* [Length of Longest Subarray With at Most K Frequency] - https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
+* [Length of Longest Subarray With at Most K Frequency](./maxSubarrayLength.py) - https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
     - good problem to review (i was able to do it pretty easily but still good to look back on)
-*[Number of Good Pairs](./numOfGoodPairs.py)
+
+* [Number of Good Pairs](./numOfGoodPairs.py) - https://leetcode.com/problems/number-of-good-pairs/description/
+    - good problem to review, question why we do the two pass, see if we can do the one pass
+
+
 
 
 
