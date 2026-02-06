@@ -69,6 +69,18 @@ def get_sum(head):
 
 ```
 
+### 4. Walking the Track vs. Changing the Track
+Recall the traversal section on how we moved along in a linkedlist, there is a vital distinguish between moving your variable and modifying the list's structure.
+
+* **Walking:** `curr = curr.next` moves your "feet" to a new node. You are changing which node we are looking at (basically the traversal from above)
+* **Changing (Snipping):** `curr.next = curr.next.next` changes the "track" itself. (but not actually moving along)
+
+**The Golden Rule of Deletion:**
+
+When deleting nodes in a loop, only move your **"feet"(walking)** (`curr = curr.next`) if you **didn't** delete anything. 
+
+If you did delete a node (**snipping**), stay put—the new node that shifted into the `.next` position needs to be checked next.
+
 ---
 
 ## D. Types of Linked Lists
@@ -165,6 +177,25 @@ def fast_slow_gap(head, k):
 
 ```
 
+## 2) Linked List Deletion (Look-Ahead Pattern)
+When removing nodes (like duplicates), you often only need one pointer. Instead of moving two pointers, you stand on `curr` and "look ahead" at `curr.next`.
+
+* **Logic:** 1. If `curr.val == curr.next.val`, snip the duplicate: `curr.next = curr.next.next`.
+    2. **Crucially**, do not move `curr` yet. The "new" `curr.next` might also be a duplicate.
+    3. Only move `curr = curr.next` when the values are different.
+
+
+
+**Pseudocode:**
+```python
+while curr and curr.next:
+    if curr.val == curr.next.val:
+        curr.next = curr.next.next  # Snip the duplicate
+    else:
+        curr = curr.next            # Move to next unique node
+```
+
+
 #### Example Problems:
 
 * [Find Middle](./Fast&SlowPointers/EX_findMiddle.py) 
@@ -173,5 +204,6 @@ def fast_slow_gap(head, k):
     - good example of the gap strategy
 
 #### Testing Problems: 
-
+* [Delete Duplicates](./Fast&SlowPointers/deleteDuplicates.py)
+    - good problem to review
 ---
