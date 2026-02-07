@@ -61,10 +61,10 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 ### Example Problems
 
 * [Longest Substring with K Distinct Characters](./Counting/EX_findLongestSubstring.py) — *Uses `defaultdict` and sliding window.*
-* [2248. Intersection of Multiple Arrays](./Counting/intersectionArrays.py) — *Uses counts to find elements present in all N arrays.*
-* [1941. Equal Number of Occurrences](./Counting/occurencesEqual.py) — *Uses `counts.values()` and `set()` to verify frequencies.*
-* [560. Subarray Sum Equals K](./Counting/subarraySumK.py) — *The standard Prefix Sum + Hashing implementation.*
-* [1248. Count Number of Nice Subarrays](./Counting/niceSubarrays.py) — *Transforms odds/evens into 1s/0s to use the same logic.*
+* [2248. Intersection of Multiple Arrays](./Counting/EX_intersectionMultipleArrays.py) — *Uses counts to find elements present in all N arrays.*
+* [1941. Equal Number of Occurrences](./Counting/EX_areOccurrencesEqual.py) — *Uses `counts.values()` and `set()` to verify frequencies.*
+* [560. Subarray Sum Equals K](./Counting/EX_subarraySumK.py) — *The standard Prefix Sum + Hashing implementation.*
+* [1248. Count Number of Nice Subarrays](./Counting/EX_countNumOfNiceSubarrays.py) — *Transforms odds/evens into 1s/0s to use the same logic.*
 
 ### Practice Problems for Testing
 
@@ -136,6 +136,11 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 
 * [Number of Good Pairs](./numOfGoodPairs.py) - https://leetcode.com/problems/number-of-good-pairs/description/
     - good problem to review, question why we do the two pass, see if we can do the one pass
+
+* [Binary Subarrays with Sum](./binarySubArraysSum.py) - https://leetcode.com/problems/binary-subarrays-with-sum/description/
+    - REALLY STRUGGLED WITH THIS, need to review this 
+    - in particular, look at the last solution on the leetcode editorial 
+    - also review the solution i provided
 
 
 
