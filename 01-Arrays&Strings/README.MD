@@ -18,6 +18,43 @@ A specific type of two-pointer technique used for **contiguous** segments (subar
 * **Dynamic Window:** The window expands with the right pointer and shrinks with the left pointer whenever a constraint is broken.
 * **Common Use:** Finding the maximum/minimum sum or length of a subarray that meets a specific condition.
 
+### General Sliding Window Pattern
+
+Most sliding window problems follow a consistent logical flow. Use this pattern to maintain a valid window while traversing the data:
+
+1.  **Expand**: Add a new element to the window from the right.
+2.  **Validate**: Check if the window is currently valid based on the problem constraints. Examples of constraints include:
+    -   Must have at least 2 different characters.
+    -   Sum should be a multiple of 10.
+    -   Must contain at least 5 characters.
+    -   Must be an anagram or palindrome of a specific target.
+3.  **Shrink**: If the window becomes **invalid**, move the `left` pointer to remove elements until the window satisfies the constraints again.
+4.  **Measure**: Once the window is valid, record the size (`right - left + 1`) or any other required property.
+5.  **Repeat**: Continue adding elements from the right until you have processed the entire input.
+
+#### Pseudocode Template
+
+```python
+left = 0
+ans = 0
+current_state = 0 # Can be a sum, frequency map, etc.
+
+for right in range(len(nums)):
+    # 1. Expand: Add the rightmost element
+    current_state += nums[right]
+    
+    # 2 & 3. Validate and Shrink: While the condition is violated
+    while not is_valid(current_state):
+        current_state -= nums[left]
+        left += 1
+        
+    # 4. Measure: Record the result for this valid window
+    ans = max(ans, right - left + 1)
+
+return ans
+```
+
+
 ## 3. Prefix Sum
 
 A pre-computation technique where we create an array that stores the cumulative sum of elements.
@@ -87,6 +124,7 @@ def build_string(s):
 * [1456. Maximum Number of Vowels in a Substring of Given Length](./maxVowels.py) - https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
     - good problem to review
 * [1208. Get Equal Substrings Within Budget](./equalSubstrings.py) - https://leetcode.com/problems/get-equal-substrings-within-budget/
+    - good problem to review
 
 ### Prefix Sum
 
