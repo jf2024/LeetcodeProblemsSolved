@@ -28,7 +28,7 @@ To find the sum of a subarray from index `i` to `j`:
 
 ### **3. Choice B: Splitting Arrays**
 
-In "Split" problems (like [waysToSplitArray.py](https://www.google.com/search?q=./EX_waysToSplitArray.py)), you don't usually need the complex range formula. You just need to know:
+In "Split" problems (like [waysToSplitArray.py](./EX_waysToSplitArray.py)), you don't usually need the complex range formula. You just need to know:
 
 * **Left Part Sum:** `prefix[i]`
 * **Right Part Sum:** `prefix[-1] - prefix[i]` (Total sum minus the left sum).
