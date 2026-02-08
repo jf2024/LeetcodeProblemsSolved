@@ -1,6 +1,36 @@
+# Leetcode 1208. Get Equal Substrings Within Budget
+# https://leetcode.com/problems/get-equal-substrings-within-budget/description/
+
 def equalSubstring(s: str, t: str, maxCost: int) -> int:
-    # TODO: Implement logic
-    pass
+    """
+    My Implementation
+
+    Time Complexity: O(N) - will process each index of s and t at most twice, iterating over the characters w
+    while extending the window 
+
+    Space Complexity: O(1)
+    """
+    left = 0
+    ans = 0
+    cost = 0
+
+    total_cost = 0
+
+    for i in range(len(s)):
+        cost = abs(ord(s[i]) - ord(t[i]))
+
+        total_cost += cost
+
+
+        while maxCost - total_cost < 0:
+
+            total_cost -= abs(ord(s[left]) - ord(t[left]))
+            left += 1
+
+        ans = max(ans, i - left + 1)
+        
+        
+    return ans 
 
 if __name__ == "__main__":
     # Test 1
