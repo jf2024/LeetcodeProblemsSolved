@@ -139,8 +139,9 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 
 * [Binary Subarrays with Sum](./binarySubArraysSum.py) - https://leetcode.com/problems/binary-subarrays-with-sum/description/
     - REALLY STRUGGLED WITH THIS, need to review this 
-    - in particular, look at the last solution on the leetcode editorial 
-    - also review the solution i provided
+    - also review the solutions 
+        - one using prefix sum
+        - the other using sliding window
 
 
 
