@@ -17,7 +17,7 @@ def equalSubstring(s: str, t: str, maxCost: int) -> int:
     total_cost = 0
 
     for i in range(len(s)):
-        cost = abs(ord(s[i]) - ord(t[i]))
+        cost = abs(ord(s[i]) - ord(t[i])) #https://stackoverflow.com/questions/227459/how-to-get-the-ascii-value-of-a-character
 
         total_cost += cost
 
