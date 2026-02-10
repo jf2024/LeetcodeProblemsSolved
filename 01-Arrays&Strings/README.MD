@@ -130,5 +130,6 @@ def build_string(s):
 
 * [1732. Find the Highest Altitude](./highestAltitude.py) - https://leetcode.com/problems/find-the-highest-altitude/
 * [724. Find Pivot Index](./pivotIndex.py) - https://leetcode.com/problems/find-pivot-index/
+    - good problem to review
 * [303. Range Sum Query - Immutable](./rangeSumImmutable.py) - https://leetcode.com/problems/range-sum-query-immutable/
 
