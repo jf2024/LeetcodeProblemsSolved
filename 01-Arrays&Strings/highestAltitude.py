@@ -1,6 +1,18 @@
 def largestAltitude(gain: list[int]) -> int:
-    # TODO: Implement logic
-    pass
+    """
+    Time Complexity: O(N) - iterate over every integer in the list once
+
+    Space Complexity: O(1) - only need two variables
+    """
+    ans = 0 
+    curr = 0
+    for n in gain:
+
+        curr += n
+        ans = max(curr, ans)
+
+    return ans
+
 
 if __name__ == "__main__":
     # Test 1
