@@ -143,6 +143,8 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
         - one using prefix sum
         - the other using sliding window
 
+* [Maximum Erasure Value](./maxErasureValue.py) - https://leetcode.com/problems/maximum-erasure-value/description/
+    - good problem to review
 
 
 
