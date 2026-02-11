@@ -132,4 +132,5 @@ def build_string(s):
 * [724. Find Pivot Index](./pivotIndex.py) - https://leetcode.com/problems/find-pivot-index/
     - good problem to review
 * [303. Range Sum Query - Immutable](./rangeSumImmutable.py) - https://leetcode.com/problems/range-sum-query-immutable/
+    - some notes about prefix sum, good to at least check the docstrings but not redo the problem
 
