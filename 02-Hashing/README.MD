@@ -146,6 +146,11 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [Maximum Erasure Value](./maxErasureValue.py) - https://leetcode.com/problems/maximum-erasure-value/description/
     - good problem to review
 
+* [Permutation in String](./permutationInString.py) - https://leetcode.com/problems/permutation-in-string/description/
+    - RLLY GOOD PROBLEM TO REVIEW
+    - had some trouble, needed some hints from gemini
+    - extra notes in the file but try to solve it again on my own
+
 
 
 
