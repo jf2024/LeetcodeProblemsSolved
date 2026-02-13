@@ -12,11 +12,46 @@ Used when we need to iterate through an array or string by tracking two differen
 
 ## 2. Sliding Window
 
-A specific type of two-pointer technique used for **contiguous** segments (subarrays or substrings).
+A technique for processing **contiguous** segments (subarrays or substrings) in  time.
 
-* **Fixed Window:** The window size is constant. We "slide" it by adding a new right element and removing the old left element.
-* **Dynamic Window:** The window expands with the right pointer and shrinks with the left pointer whenever a constraint is broken.
-* **Common Use:** Finding the maximum/minimum sum or length of a subarray that meets a specific condition.
+### **Patterns & Triggers**
+
+| Pattern | Mental Trigger | Strategy |
+| --- | --- | --- |
+| **Fixed Window** | "Find an anagram/permutation" or "Given a specific length **K**." | Maintain a window of size **K**. As the right pointer moves, the left pointer **must** follow immediately. |
+| **Variable Window** | "Find the **longest/shortest** subarray" or "Find the **minimum** window." | Expand the right pointer to find a valid window. Once valid (or invalid), shrink the left pointer to optimize or repair. |
+
+---
+
+### **Pattern Breakdown**
+
+#### **1. Fixed Window (The "Slinky" Move)**
+
+Use this when the window size is predetermined.
+
+* **The Recognition:**
+    * The problem involves a continuous range.
+    * The constraint is based on a **fixed length**.
+    * *Example:* In "Permutation in String," a permutation of `s1` must be exactly `len(s1)`. Therefore, your window is always `len(s1)`.
+
+
+* **The Implementation:**
+    1. Build the initial window (first `K` elements).
+    2. Loop from `K` to `N`.
+    3. Add `nums[i]`, remove `nums[i - K]`.
+
+#### **2. Variable/Dynamic Window (The "Accordion" Move)**
+
+Use this when the window size depends on the content of the elements.
+
+* **The Recognition:**
+    * The problem asks for a **min/max length** to satisfy a condition.
+    * *Example:* "Find the longest subarray with unique characters."
+
+
+* **The Implementation:**
+    1. Expand the `right` pointer to include an element.
+    2. Use a `while` loop to shrink the `left` pointer until the condition is met again.
 
 ### General Sliding Window Pattern
 
