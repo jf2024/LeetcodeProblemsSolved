@@ -154,7 +154,8 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [Isomorphic Strings](./isIsomorphic.py) - https://leetcode.com/problems/isomorphic-strings/description
     - good problem to review as well despite the "easy" level
 
-
+* [Word Pattern](./wordPattern.py) - https://https://leetcode.com/problems/word-pattern/description/
+    - basically another "Isomorphic Strings" Problem
 
 
 
