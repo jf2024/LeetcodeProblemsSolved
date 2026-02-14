@@ -3,45 +3,33 @@ from collections import defaultdict
 """
 THE PREFIX SUM + HASHING PATTERN (The "Subarray Sum" Framework)
 
-1. THE CORE LOGIC: THE "GAP" ANALOGY
-   Think of the array as a path you are walking. 
-   - 'curr' is your total distance from the starting line.
-   - 'goal' is a specific distance you want a segment of that path to be.
-   
-   If you are currently at 10 miles (curr) and you want to find a 
-   segment that is exactly 3 miles long (goal), you need to look 
-   back and see how many times in the past you were at 7 miles.
-   
-   Equation: Previous_Sum = Current_Sum - Goal
+HOW THE CODE PLAYS ITS PART (Line-by-Line inside of the for loop):
 
-2. WHY THE SUBTRACTION (curr - goal)?
-   This pattern almost always involves subtraction because we are 
-   looking for a "starting point" in our history. 
-   - 'curr' contains the sum of the subarray we want PLUS some extra 
-     prefix from the beginning.
-   - By subtracting the 'goal', we calculate exactly how much that 
-     "extra prefix" must have been.
+1. curr += num
+   - YOUR POSITION: This moves you further down the path. You are 
+     calculating the total sum from the very beginning to here.
 
-3. WHY A DICTIONARY (Frequency Map)?
-   In arrays with zeros or negative numbers, you can reach the 
-   SAME prefix sum multiple times.
-   Example: [1, 0, 0, 0] with goal 1.
-   You hit the sum '1' at index 0. Then you stay at sum '1' for the 
-   next three zeros. Each time you hit that sum again, it represents 
-   a NEW unique subarray that satisfies the goal. 
-   The dictionary tracks HOW MANY ways we could have started.
+2. ans += counts[curr - goal]
+   - THE LOOKBACK: You are asking, "How many times in the past was I 
+     at a distance that is exactly 'goal' miles behind me?"
+   - We add the FREQUENCY because if we were at that distance 3 times 
+     before, there are 3 different starting points that create 
+     3 different valid subarrays ending NOW.
 
-4. THE BASE CASE: counts[0] = 1
-   We must initialize the map with 0:1 to represent the "empty" 
-   prefix sum before the array starts. This ensures that if 
-   (curr - goal) == 0, we correctly count the subarray that 
-   starts from the very first element (index 0).
+3. counts[curr] += 1
+   - THE RECORD: You are marking this spot on your map. You don't 
+     use this mark for the current index (to avoid matching with 
+     yourself), but you leave it there for FUTURE indices to find.
 
-5. MENTAL TRIGGER:
-   If a problem asks to "Count the number of subarrays..." and 
-   sliding window feels difficult due to zeros or negative numbers, 
-   immediately reach for: 
-   Prefix Sum + Hash Map (curr - goal).
+EXAMPLE TRACE: nums = [1, 0, 1], goal = 1
+- At index 0 (num=1, curr=1): 
+    Lookback 0 (1-1). ans becomes 1. Map: {0:1, 1:1}
+- At index 1 (num=0, curr=1): 
+    Lookback 0 (1-1). ans becomes 2. Map: {0:1, 1:2} 
+    (Note: curr didn't change, but we found a new subarray [1, 0])
+- At index 2 (num=1, curr=2): 
+    Lookback 1 (2-1). We see '1' appeared TWICE in the past. 
+    ans += 2. Total ans = 4.
 """
 
 
