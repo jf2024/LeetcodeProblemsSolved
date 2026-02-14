@@ -151,6 +151,9 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
     - had some trouble, needed some hints from gemini
     - extra notes in the file but try to solve it again on my own
 
+* [Isomorphic Strings](./isIsomorphic.py) - https://leetcode.com/problems/isomorphic-strings/description
+    - good problem to review as well despite the "easy" level
+
 
 
 
