@@ -4,10 +4,10 @@
 
 ## A. What is a Node?
 
-A **Node** is an object that acts as the building block of a Linked List. Unlike a simple array element, a Node is a "container" that holds both data and pointers to other nodes.
+A **Node** is the building block of a Linked List. It is a "container" that holds both data and a reference to where the next piece of data lives.
 
 * **Data:** The value stored (integer, string, etc.).
-* **Next:** A reference (pointer) to the next Node in the sequence.
+* **Next:** A pointer to the next Node object.
 
 ---
 
@@ -18,104 +18,85 @@ A **Node** is an object that acts as the building block of a Linked List. Unlike
 | **Access** |  (Random Access) |  (Must traverse) |
 | **Insert/Delete** |  (Requires shifting) |  (With reference) |
 | **Memory** | Contiguous block | Scattered (Pointers) |
-| **Size** | Fixed (or costly to resize) | Dynamic (Grows easily) |
 
-> **Note on Space:** While both have O(N) space complexity, Linked Lists have more **overhead** because they must store the pointer (`.next`) in addition to the data.
-
-> **Why use Linkedlist over Arrays?** For insertation/deletion at the ends or middlle (provided we have a pointer). With an array, inserting at index O is O(N) because every element must shift. With a linkedlist, we just change two pointers. In addition, linkedlist don't require a *contiguous block of memory*. 
+> **Why use Linked Lists?** They excel at dynamic size and  insertions/deletions at the ends or middle (if you already have the pointer). They don't require a large contiguous block of memory, which is helpful for fragmented systems.
 
 ---
 
-## C. Mechanics & Traversal
+## C. Traversal Mechanics
 
-### 1. Pointer Assignment
+### 1. Moving vs. Modifying (The Golden Rule)
 
-Assigning a pointer refers to an object in memory. Variables remain at nodes unless modified directly.
+There is a vital distinction between moving your "view" and modifying the list's "skeleton."
 
-* `ptr = head`: `ptr` now looks at the same object as `head`.
-* `head = head.next`: `head` moves forward to the next node.
+* **Walking:** `curr = curr.next` moves your "feet" to a new node. You are just looking at a different object.
+* **Surgery (Snipping):** `curr.next = curr.next.next` changes the "track" itself. This physically alters the list in memory.
 
-### 2. Chaining
+**The Deletion Rule:**
+When deleting nodes in a loop, only **Walk** (`curr = curr.next`) if you **didn't** perform **Surgery**. 
+If you snipped a node, "stay put"—the new node that moved into the `.next` position needs to be checked immediately.
 
-We connect nodes by setting the `.next` property.
+---
+
+## D. Advanced Patterns: The "Anchor & Worker"
+
+When building or modifying a list where the **Head** might change, we use two separate variables:
+
+### 1. The Sentinel Node (The "Anchor")
+
+A physical `ListNode(0)` created as a permanent placeholder at the start.
+
+* **The Purpose:** It acts as a "fixed post" in the ground. You don't have to write `if head is None` logic because the Sentinel is **never** None.
+* **The Return:** You always return `dummy.next` to get the real list.
+
+### 2. The Traversal Pointer (The "Worker")
+
+A variable (usually `curr`) that starts at the Anchor but walks down the list.
+
+* **The Purpose:** The Worker hitches new nodes to the chain and then moves forward to the new end.
+* **Why both?** If you moved the Sentinel variable itself, you would lose the start of your list.
+
+---
+
+### 3. Example: Merge Two Sorted Lists
+
+This problem demonstrates how the **Anchor** stays put while the **Worker** builds the new list.
+link to problem: https://leetcode.com/problems/merge-two-sorted-lists/description/
 
 ```python
-class ListNode:
-    def __init__(self, val):
-        self.val = val
-        self.next = None
+def mergeTwoLists(list1, list2):
+    # THE ANCHOR: Stays at the station so we can find the head later
+    dummy = ListNode(0) 
 
-one = ListNode(1)
-two = ListNode(2)
-three = ListNode(3)
+    # THE WORKER: Starts at the anchor, moves forward to perform surgery
+    curr = dummy 
 
-one.next = two   # 1 -> 2
-two.next = three # 1 -> 2 -> 3
-head = one
+    while list1 and list2:
+        if list1.val <= list2.val:
+            curr.next = list1   # SURGERY: Worker hitches list1 to the chain
+            list1 = list1.next  # WALKING: list1 scout moves forward
+        else:
+            curr.next = list2   # SURGERY: Worker hitches list2 to the chain
+            list2 = list2.next  # WALKING: list2 scout moves forward
+        
+        curr = curr.next        # WALKING: Worker moves to the new end of the chain
 
+    # THE CLEANUP: Attach whichever list still has nodes left
+    curr.next = list1 or list2
+
+    # Return the node immediately after the Anchor
+    return dummy.next
 ```
-
-### 3. Traversal
-
-Since we don't have indices, we use a `while` loop. The loop terminates when we hit `None` (the end of the list) or in other words, when head is None/Null.
-
-```python
-def get_sum(head):
-    ans = 0
-    while head:
-        ans += head.val
-        head = head.next # Move to the next "link" in the chain
-    return ans
-
-```
-
-### 4. Walking the Track vs. Changing the Track
-Recall the traversal section on how we moved along in a linkedlist, there is a vital distinguish between moving your variable and modifying the list's structure.
-
-* **Walking:** `curr = curr.next` moves your "feet" to a new node. You are changing which node we are looking at (basically the traversal from above)
-* **Changing (Snipping):** `curr.next = curr.next.next` changes the "track" itself. (but not actually moving along)
-
-**The Golden Rule of Deletion:**
-
-When deleting nodes in a loop, only move your **"feet"(walking)** (`curr = curr.next`) if you **didn't** delete anything. 
-
-If you did delete a node (**snipping**), stay put—the new node that shifted into the `.next` position needs to be checked next.
 
 ---
 
-## D. Types of Linked Lists
+## E. Types of Linked Lists
 
-1. **Singly Linked List:** Each node points only to the **next** node. (Forward only).
-2. **Doubly Linked List:** Each node points to both the **next** and the **previous** node. (Bidirectional).
-
----
-
-## E. Sentinel Nodes
-
-**Sentinel nodes** (also called "Dummy" nodes) are extra nodes placed at the start (`head`) and end (`tail`) of a list that **do not contain real data.**
-
-* **Why use them?** They eliminate edge cases. For example, deleting a node usually requires checking if `node.prev` or `node.next` is null. With Sentinels, every "real" node always has a neighbor.
-* **Structure:** * `Sentinel Head -> Real Node 1 -> Real Node 2 -> Sentinel Tail`
-* The "real" head is always `sentinel_head.next`.
+1. **Singly Linked List:** Nodes point only to the **next** node (Forward only).
+2. **Doubly Linked List:** Nodes point to both **next** and **previous** (Bidirectional).
 
 ---
 
-## F. Dummy Pointers
-
-A **Dummy Pointer** is simply a temporary variable used to traverse the list so you don't lose the reference to the original `head`. If you move the `head` variable itself during a calculation, you can never get back to the start of the list!
-
-```python
-def get_sum(head):
-    ans = 0
-    curr = head # 'curr' is our dummy pointer
-    while curr:
-        ans += curr.val
-        curr = curr.next
-    
-    # We can still access the start of the list using 'head'
-    return ans
-
-```
 
 # Algorthims/Techniques
 
