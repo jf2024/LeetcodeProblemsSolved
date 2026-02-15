@@ -184,8 +184,6 @@ When removing nodes (like duplicates), you often only need one pointer. Instead 
     2. **Crucially**, do not move `curr` yet. The "new" `curr.next` might also be a duplicate.
     3. Only move `curr = curr.next` when the values are different.
 
-
-
 **Pseudocode:**
 ```python
 while curr and curr.next:
@@ -207,3 +205,66 @@ while curr and curr.next:
 * [Delete Duplicates](./Fast&SlowPointers/deleteDuplicates.py)
     - good problem to review
 ---
+
+Here is a clean, markdown-friendly section for your notes. I’ve structured it so the code and the visualization live side-by-side, specifically focusing on what happens during that critical first loop.
+
+---
+
+## 3) Reversing a Linked List
+
+### The Three-Pointer Strategy
+
+We use three pointers to ensure we never lose our place in memory:
+
+1. **`prev`**: The node we just finished reversing (our new "next").
+2. **`curr`**: The node we are currently flipping.
+3. **`next_node`**: Our "Scout" that holds onto the rest of the list (temp variable).
+
+### Code Implementation
+
+```python
+def reverse_list(head):
+    prev = None
+    curr = head
+
+    while curr:
+        next_node = curr.next  # 1. SCOUT (Save the future)
+        curr.next = prev       # 2. SURGERY (Flip the pointer)
+        prev = curr            # 3. STEP (Move prev forward)
+        curr = next_node       # 4. STEP (Move curr forward)
+        
+    return prev
+
+```
+
+### Step-by-Step: The First Iteration
+
+Imagine our list is: `A -> B -> C -> NULL`
+
+**Initial State:**
+
+* `prev` = `None`
+* `curr` = `A`
+
+| Action | Code | Resulting State |
+| --- | --- | --- |
+| **1. Scout** | `next_node = curr.next` | `next_node` is now pointing at **B**. (We won't lose the rest of the list!) |
+| **2. Surgery** | `curr.next = prev` | **A** now points to `None`. The bond between A and B is broken. |
+| **3. Step** | `prev = curr` | `prev` label moves to **A**. |
+| **4. Step** | `curr = next_node` | `curr` label moves to **B**. |
+
+**End of Iteration 1:**
+`None <- A(prev)` ... `B(curr) -> C -> NULL`
+
+And immediatly after, next_node = curr.next, C would be the next_node 
+
+---
+
+### Why we return `prev`
+
+By the time the `while` loop finishes, `curr` has walked off the edge of the list and is `None`. `prev`, however, is standing on the **very last node** we processed—which is now the **new head** of the reversed list.
+
+---
+
+### Example Problems:
+* []
