@@ -97,7 +97,6 @@ def mergeTwoLists(list1, list2):
 
 ---
 
-
 # Algorthims/Techniques
 
 ## 1) Fast and Slow Pointers (Two-Pointer Technique)
@@ -127,7 +126,6 @@ def fast_slow_speed(head):
         fast = fast.next.next
     
     return slow # In many cases, slow is now at the middle
-
 ```
 
 ### B. Different Starting Positions (The "Gap" Strategy)
@@ -155,7 +153,6 @@ def fast_slow_gap(head, k):
         fast = fast.next
         
     return slow
-
 ```
 
 ## 2) Linked List Deletion (Look-Ahead Pattern)
@@ -187,10 +184,6 @@ while curr and curr.next:
     - good problem to review
 ---
 
-Here is a clean, markdown-friendly section for your notes. I’ve structured it so the code and the visualization live side-by-side, specifically focusing on what happens during that critical first loop.
-
----
-
 ## 3) Reversing a Linked List
 
 ### The Three-Pointer Strategy
@@ -215,7 +208,6 @@ def reverse_list(head):
         curr = next_node       # 4. STEP (Move curr forward)
         
     return prev
-
 ```
 
 ### Step-by-Step: The First Iteration
@@ -248,4 +240,7 @@ By the time the `while` loop finishes, `curr` has walked off the edge of the lis
 ---
 
 ### Example Problems:
-* []
+* [Reverse LinkedList](./ReversingLinkedList/EX_reverseList.py)
+* [Swap Nodes in Pairs](./ReversingLinkedList/EX_swapPairs.py) - https://leetcode.com/problems/swap-nodes-in-pairs/
+
+* NOTE: BOTH GOOD PROBLEMS TO REVIEW AND LOOK BACK ON, ESPECIALLY SWAP NODES
