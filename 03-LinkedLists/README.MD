@@ -242,5 +242,6 @@ By the time the `while` loop finishes, `curr` has walked off the edge of the lis
 ### Example Problems:
 * [Reverse LinkedList](./ReversingLinkedList/EX_reverseList.py)
 * [Swap Nodes in Pairs](./ReversingLinkedList/EX_swapPairs.py) - https://leetcode.com/problems/swap-nodes-in-pairs/
+* [Maximum Twin Sum of a Linked List](./ReversingLinkedList/EX_maxTwinSum.py) - https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/
 
-* NOTE: BOTH GOOD PROBLEMS TO REVIEW AND LOOK BACK ON, ESPECIALLY SWAP NODES
+* NOTE: ALL GOOD PROBLEMS TO REVIEW AND LOOK BACK ON, ESPECIALLY SWAP NODES AND TWINSUM
