@@ -157,5 +157,9 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 * [Word Pattern](./wordPattern.py) - https://https://leetcode.com/problems/word-pattern/description/
     - basically another "Isomorphic Strings" Problem
 
+* [Custom Sort String](./customSortString.py) - https://leetcode.com/problems/custom-sort-string/description/
+    - good problem to review, needed a little help from gemini
+    
+* [Close Strings](./closeStrings.py) - 
 
 
