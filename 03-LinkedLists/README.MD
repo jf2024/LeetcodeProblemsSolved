@@ -245,3 +245,7 @@ By the time the `while` loop finishes, `curr` has walked off the edge of the lis
 * [Maximum Twin Sum of a Linked List](./ReversingLinkedList/EX_maxTwinSum.py) - https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/
 
 * NOTE: ALL GOOD PROBLEMS TO REVIEW AND LOOK BACK ON, ESPECIALLY SWAP NODES AND TWINSUM
+
+### Testing Problem:
+* [Reverse LinkedList II](./ReversingLinkedList/reverseList2.py) - https://leetcode.com/problems/reverse-linked-list-ii/description/
+    - GOOD PROBLEM TO REVIEW
