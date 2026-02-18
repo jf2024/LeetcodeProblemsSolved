@@ -171,6 +171,18 @@ while curr and curr.next:
         curr = curr.next            # Move to next unique node
 ```
 
+### **Loop Logic Cheat Sheet**
+
+Choosing the right `while` condition prevents `AttributeError` crashes.
+
+| Condition | Use Case | Mental Rule |
+| --- | --- | --- |
+| `while curr:` | Searching, Summing, Printing. | "I need to look at **this** node." |
+| `while curr.next:` | Deletion, Peek-ahead. | "I need to change the **next** node." |
+| `while curr and curr.next:` | Fast/Slow pointers, Swapping pairs. | "I need a **complete pair** to continue." |
+
+> **💡 Pro-Tip:** If your code involves the phrase **`.next.next`**, you almost certainly need **`while curr and curr.next`**. It acts as your safety guard to ensure you don't "jump off a cliff" into a `None` value.
+
 
 #### Example Problems:
 
@@ -249,3 +261,5 @@ By the time the `while` loop finishes, `curr` has walked off the edge of the lis
 ### Testing Problem:
 * [Reverse LinkedList II](./ReversingLinkedList/reverseList2.py) - https://leetcode.com/problems/reverse-linked-list-ii/description/
     - GOOD PROBLEM TO REVIEW
+
+## 4)List of More Linkedlist Problems
