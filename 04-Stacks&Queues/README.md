@@ -33,6 +33,11 @@
 * [Backspace String Compare](./Stacks/EX_BackspaceCompare.py)
     - try and solve this problem with O(N) time and O(1) spac (good exercise)
 
+
+### Testing Problems
+* [Simplify Path](./Stacks/simpliftPath.py)
+* [Make the String Great](./Stacks/makeGoodStrings.py)
+
 # Queues
 
 add here later 
