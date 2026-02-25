@@ -31,12 +31,13 @@
 * [Valid Parentheses](./Stacks/EX_validParentheses.py)
 * [Remove All Adjacent Duplicates in String](./Stacks/EX_removeAdjacentDuplicates.py)
 * [Backspace String Compare](./Stacks/EX_BackspaceCompare.py)
-    - try and solve this problem with O(N) time and O(1) spac (good exercise)
+    - can also use two pointers to solve this problem
 
 
 ### Testing Problems
-* [Simplify Path](./Stacks/simpliftPath.py)
-* [Make the String Great](./Stacks/makeGoodStrings.py)
+* [Simplify Path](./Stacks/simpliftPath.py) - https://leetcode.com/problems/simplify-path/description/
+    - good problem to review
+* [Make the String Great](./Stacks/makeGoodStrings.py) 
 
 # Queues
 
