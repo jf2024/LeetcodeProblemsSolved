@@ -41,4 +41,26 @@
 
 # Queues
 
-add here later 
+## Core Concepts
+
+FIFO: first in first out 
+    - think of a line at a food restaurant, the first person orders their food and is the first one to leave the line
+
+in stacks, elements are added and removed from one side
+with queues, elements are added from one side and removed from the other side 
+    - add elements called enqueue
+    - delete elements called dequeue 
+
+can technically use dynamic arrays to implement a queue but will be O(N) when removing or adding from the front of the array (remember each element has a fixed address so if we add or remove, will need to shift oru elements which is O(N) or n is the size of the array)
+
+instead we can use doubly linkedlists since we have pointers instead and with this, our addition or deletion becomes O(1) so its now much more efficient 
+
+moving forward, we will implement a deque, basically a double ended queue
+    - with a deque, we can add or remove elements from either side 
+    - in a regular queue, usually add elements to one side and delete from the other side 
+    "from collections import deque" 
+
+less common problems then stacks as queues are usually for BFS (breath first search) but again outside of that, not rlly used standalone like the previous data structures 
+
+https://docs.python.org/3/library/collections.html#collections.deque 
+list of some operations to use like append, appendleft, clear, ect... 
