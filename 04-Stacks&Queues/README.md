@@ -64,3 +64,36 @@ less common problems then stacks as queues are usually for BFS (breath first sea
 
 https://docs.python.org/3/library/collections.html#collections.deque 
 list of some operations to use like append, appendleft, clear, ect... 
+
+### Example and Testing Problems
+
+* [Recent Counter](./Queues/EX_recentCounter.py)
+* [Moving Average](./Queues/movingAverage.py)
+
+# Monotonic 
+
+## Core Concepts
+
+def: the elements are always sorted either in increasing or decreasing order 
+ex: stack = [1, 5, 8, 15, 23]
+if we wanted to add the 14, we would need to pop the 15 and 23 first before pushing 14 
+
+psudeocode
+stack = []
+for num in nums (or using range(len)):
+    while stack and stack[-1] >= num:
+        stack.pop
+    //some logic depending on problem
+    stack.push(num)
+
+useful for: 
+    - finding the next element based on some criteria (next greater element)
+    - for dynamic window of elements and want to maintain the max or min element when our window changes
+
+
+### Example Problems (all good examples to review)
+
+*[Daily Temperatures](./Monotonic/EX_dailyTemperatures.py)
+*[Sliding Window Maximum](./Monotonic/EX_slidingWindowMax.py)
+*[Longest Subarray Difference](./Monotonic/EX_longestSubarrayAbsDiff.py)
+
