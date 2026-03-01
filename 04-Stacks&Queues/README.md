@@ -105,7 +105,7 @@ for num in nums: # or using range(len)
 * [Longest Subarray Difference](./Monotonic/EX_longestSubarrayAbsDiff.py)
 
 ### Testing Problems
-
+* [Next Greater Element](./Monotonic/nextGreaterElement.py) - https://leetcode.com/problems/next-greater-element-i/description/
 
 ---
 
