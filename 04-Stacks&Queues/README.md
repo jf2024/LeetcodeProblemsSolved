@@ -106,6 +106,7 @@ for num in nums: # or using range(len)
 
 ### Testing Problems
 * [Next Greater Element](./Monotonic/nextGreaterElement.py) - https://leetcode.com/problems/next-greater-element-i/description/
+* [Online Stock Span](./Monotonic/stockSpanner.py)
 
 ---
 
