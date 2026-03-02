@@ -108,6 +108,32 @@ for num in nums: # or using range(len)
 * [Next Greater Element](./Monotonic/nextGreaterElement.py) - https://leetcode.com/problems/next-greater-element-i/description/
 * [Online Stock Span](./Monotonic/stockSpanner.py)
 
+## Metadata Bundling in Stacks (Online Stock Span Notes)
+
+### The Concept
+
+Sometimes, a raw value (like a price) isn't enough to solve the problem efficiently. You need to "bundle" the value with metadata—extra information that describes the state of that value. [airtribe](https://www.airtribe.live/dsa-sheet/resource/online-stock-span)
+
+### Why use it?
+
+It allows the stack to "remember" work that was already completed. Instead of re-calculating history, you "collapse" previous results and store them in a tuple or list. [thita](https://thita.ai/blog/dsa/stack-patterns)
+
+### The "Handover" Pattern
+
+When a new element pops an old one, it "inherits" the old element's metadata. [airtribe](https://www.airtribe.live/dsa-sheet/resource/online-stock-span)
+
+Example: In Stock Spanner, the span is the metadata. When a higher price pops a lower one, it adds the lower one's span to its own. [airtribe](https://www.airtribe.live/dsa-sheet/resource/online-stock-span)
+
+***
+
+### Common Bundle Patterns
+
+- `(value, count/span)`: Used to skip over already-processed consecutive elements.
+- `(value, current_min)`: Used in "Min Stack" problems to track the minimum in O(1).
+- `(value, index)`: Used when you need to calculate distances or widths (like in histograms).
+
+**Pro-Tip:** If you find yourself thinking, "I wish I didn't have to re-count these elements," you probably need to bundle a count variable into your stack.
+
 ---
 
 ## Cheat Sheet: Sliding Window vs. Monotonic Window
@@ -118,3 +144,7 @@ for num in nums: # or using range(len)
 | **Data Tool** | Two Pointers + a single Variable (sum/count). | Two Pointers + a **Deque**. |
 | **When to use?** | When all elements contribute to a total (e.g., Sum < K). | When one "Leader" element dictates the window (e.g., Max - Min < K). |
 | **Logic on "Left"** | Subtract `nums[left]` from the total. | Only pop from deque if `nums[left]` is the current Max/Min. |
+
+# Testing LeetCode Problems to 
+
+
