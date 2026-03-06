@@ -159,7 +159,8 @@ When a problem asks for a subarray with an **exact** sum or count (and the array
 
 * [Custom Sort String](./customSortString.py) - https://leetcode.com/problems/custom-sort-string/description/
     - good problem to review, needed a little help from gemini
-    
-* [Close Strings](./closeStrings.py) - 
+
+* [Close Strings](./closeStrings.py) - https://leetcode.com/problems/determine-if-two-strings-are-close/description/
+    - GREAT PROBLEM TO REVIEW, was able to solve it but needed a tiny push from gemini for the best time complexity
 
 
